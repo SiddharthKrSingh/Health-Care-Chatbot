@@ -1,0 +1,29 @@
+<!-- chat.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare AI Assistant</title>
+</head>
+<body>
+    <h1>HEALTH CARE AI ASSISTANT</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_text">Input:</label>
+        <input type="text" name="input_text" id="input_text">
+        <button type="submit">SUBMIT</button>
+    </form>
+
+    <h2>The Response is</h2>
+    {% for role, text in chat_history %}
+        <p>{{ role }}: {{ text }}</p>
+    {% endfor %}
+
+    <h2>The Chat History is</h2>
+    {% for role, text in chat_history %}
+        <p>{{ role }}: {{ text }}</p>
+    {% endfor %}
+</body>
+</html>
